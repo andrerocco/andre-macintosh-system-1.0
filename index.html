@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>/andre-rocco</title>
+</head>
+<body>
+    <main>
+        <div id="screen">
+
+            <header id="menu-header">
+                <img src="src/header-imgs/apple-icon.png" alt="Apple Icon" id="apple-icon-img">
+                <img src="src/header-imgs/file-button.png" alt="File">
+                <img src="src/header-imgs/edit-button.png" alt="Edit">
+                <img src="src/header-imgs/view-button.png" alt="View">
+                <img src="src/header-imgs/special-button.png" alt="Special">
+            </header>
+
+            <div id="desktop">
+
+                <div id="desktop-grid">
+
+                    <div class="desktop-icon" id="sobre-icon"> <!-- Quem é (nome e foto)? De onde veio (cidade onde mora)? Já tem experiência com computação? Se sim, qual? -->
+                        <div class="icon-image">
+                            <img srcset="src/note-icon-1x.png 0.5x, src/note-icon-2x.png" src="src/note-icon-2x.png" alt="Macintosh notes icon">
+                        </div>
+                        <div class="icon-text">
+                            <h2>sobre.txt</h2>
+                        </div>
+                    </div>
+    
+                    <div class="desktop-icon" id="porqueccs-icon"> <!-- Por que ciências da computação? Por que a UFSC? -->
+                        <div class="icon-image">
+                            <img srcset="src/note-icon-1x.png 0.5x, src/note-icon-2x.png" src="src/note-icon-2x.png" alt="Macintosh notes icon">
+                        </div>
+                        <div class="icon-text">
+                            <h2>por que</h2>
+                            <h2>ccs.txt</h2>
+                        </div>
+                    </div>
+    
+                    <div class="desktop-icon" id="extra-icon"> <!-- Hobbies? -->
+                        <div class="icon-image">
+                            <img src="src/folder-icon-cropped-2x.png" alt="Macintosh notes icon">
+                        </div>
+                        <div class="icon-text">
+                            <h2>Extra</h2>
+                        </div>
+                    </div>
+    
+                    <div class="desktop-icon" id="pfp-icon">
+                        <div class="icon-image">
+                            <img src="src/picture-icon-2x.png" alt="Macintosh image icon">
+                        </div>
+                        <div class="icon-text">
+                            <h2>pfp.jpg</h2>
+                        </div>
+                    </div>
+    
+                </div>
+
+                <div class="screen-window" id="sobre-window" style="transform: scale(0); z-index: 1">
+                    <div class="window-header no-select">
+                        <div class="window-header-title"><h1>sobre.txt</h1></div>
+                        <div class="window-header-close"><img src="src/close-icon-x.png" alt="Close"></div>
+                    </div>
+                    <div class="window-content">
+                        <h2>QUEM SOU EU?</h2>
+                        <p>Me chamo André Amaral Rocco<br>Nasci no Rio de Janeiro, mas moro em Florianópolis há mais de 10 anos (desde meus 8 anos de idade)</p>
+                        <br>
+                        <h2>MINHA EXPERIÊNCIA EM COMPUTAÇÃO...</h2>
+                        <p>Atualmente, envolve principalmente desenvolvimento web (Web Design, HTML, CSS e Java Script) e um médio conhecimento de Python e GIT</p>
+                        <br>
+                        <h2>HOBBIES!</h2>
+                        <p>Esporte (como skate, tênis e atletismo), criação de animações 3D, produção de vídeos, fotografia, além de design de moda e costura.</p>
+                        <br>
+                        <h2>EXTRA (!)</h2>
+                        <p id="pfp-jpg-path">C:/desktop/pfp.jpg</p>
+                    </div>
+                </div>
+
+                <div class="screen-window" id="porqueccs-window" style="transform: scale(0); z-index: 1">
+                    <div class="window-header no-select">
+                        <div class="window-header-title"><h1>por que css.txt</h1></div>
+                        <div class="window-header-close"><img src="src/close-icon-x.png" alt="Close"></div>
+                    </div>
+                    <div class="window-content">
+                        <h2>POR QUE CIÊNCIA DA COMPUTAÇÃO? [...]</h2>
+                        <p>Sempre tive vontade de conseguir trazer minhas ideias (e as de outras pessoas) para a existência. Aprender design me deu essa habilidade até um certo ponto, porém, projetos relacionados à computação sempre chamaram minha atenção, mesmo que normalmente eram "fora do alcance": algo que eu não tinha conhecimento o suficiente para realizar. Acredito que estudando Ciência da Computação obterei o <i>CONHECIMENTO</i> necessário para ser capaz de trazer essas diversas ideias à vida!</p>
+                        <br>
+                        <h2>[...] NA UFSC!?</h2>
+                        <p>A UFSC sempre foi uma instituição referência em aprendizado para mim. Se em algum momento eu pensei em fazer outro curso, esse curso teria que ser na UFSC! A combinação de um ensino de qualidade em um ambiente incrível localizado em Florianópolis me conquistou!</p>
+                    </div>
+                </div>
+
+                <div class="screen-window" id="pfp-window" style="transform: scale(0); z-index: 1">
+                    <div class="window-header no-select">
+                        <div class="window-header-title"><h1>pfp.jpg</h1></div>
+                        <div class="window-header-close"><img src="src/close-icon-x.png" alt="Close"></div>
+                    </div>
+                    <div class="window-content">
+                        <img src="src/profile-picture-pb.png" alt="Me_irl">
+                    </div>
+                </div> 
+
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

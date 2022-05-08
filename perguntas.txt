@@ -1,0 +1,13 @@
+- Quem é? (nome e foto)
+
+- De onde veio (cidade onde mora)?
+
+- Por que ciências da computação?
+
+- Por que a UFSC?
+
+- Já tem experiência com computação? Se sim, qual?
+
+- Hobbies?
+
+Extra: Icone bombinha ?.bat

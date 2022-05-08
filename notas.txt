@@ -1,0 +1,2 @@
+Em index.html, para que abre as janelas funcione, os ícones da #desktop-grid precisam ter o id com o mesmo nome que as janelas, apenas subsituindo "icon" por "window".
+Exemplo: #sobre-icon é o id do ícone e #sobre window é o id da janela referente ao ícone.
