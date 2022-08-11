@@ -16,7 +16,7 @@ iconesDesktop.forEach(function(iconElement) {
 })
 
 // Link "C:/desktop/pfp.jpg" abre a imagem #pfp-window
-let sobrePath = document.getElementById("pfp-jpg-path");
+const sobrePath = document.getElementById("pfp-jpg-path");
 sobrePath.addEventListener("click", function() {
     let janelaImagem = document.getElementById("pfp-window")
     janelaImagem.style.transform = "scale(1)";
@@ -108,7 +108,7 @@ janelasInteiras.forEach(function gerarPosicoes(janela) {
     var safeWidth = desktopWidth - janelaWidth - 10;
 
     // Escolhe um valor aleatório dentro da área segura
-    //Math.radom() gera um decimal aleatório entre 0 e 1
+    // Math.radom() gera um decimal aleatório entre 0 e 1
     var topPos = Math.floor(Math.random() * (safeHeight - 5 + 1)) + 5
     var leftPos = Math.floor(Math.random() * (safeWidth - 5 + 1)) + 5
     
