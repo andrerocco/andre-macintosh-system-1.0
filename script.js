@@ -15,6 +15,13 @@ iconesDesktop.forEach(function(iconElement) {
     });
 })
 
+// Link "C:/desktop/pfp.jpg" abre a imagem #pfp-window
+let sobrePath = document.getElementById("pfp-jpg-path");
+sobrePath.addEventListener("click", function() {
+    let janelaImagem = document.getElementById("pfp-window")
+    janelaImagem.style.transform = "scale(1)";
+})
+
 // PARTE - Z-index das janelas (a função é ativada quando o usuário clica em um dos ícones)
 function overlay(janela) {
     let zAtual = parseInt(janela.style.zIndex)
