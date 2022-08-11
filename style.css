@@ -60,10 +60,11 @@ header {
     z-index: 9999999;
 
     padding-left: 22px;
+    padding-top: 1px;
 
     display: grid; 
     grid-template-columns: min-content min-content min-content min-content min-content; 
-    gap: 0px 8px; 
+    gap: 0px 2px; 
 }
 #apple-icon-img {
     margin-right: 8px;
