@@ -38,7 +38,7 @@ function overlay(janela) {
         porqueccs.style.zIndex = parseInt(porqueccs.style.zIndex) -  1
     }
 }
-let janelasInteiras = document.querySelectorAll(".screen-window")
+let janelasInteiras = document.querySelectorAll('[data-window]')
 janelasInteiras.forEach(function(janela) {
     janela.addEventListener("click", function() {
         overlay(janela)
