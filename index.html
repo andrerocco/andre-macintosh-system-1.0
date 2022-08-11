@@ -61,10 +61,30 @@
                             <h2>pfp.jpg</h2>
                         </div>
                     </div>
+
+                    <div class="desktop-icon" id="calculator-icon">
+                        <div class="icon-image">
+                            <img src="src/calculator-icon-2x.png" alt="Macintosh image icon">
+                        </div>
+                        <div class="icon-text">
+                            <h2>Calculator</h2>
+                        </div>
+                    </div>
+
+                    <div class="desktop-icon" id="alarm-clock-icon">
+                        <div class="icon-image">
+                            <img src="src/alarm-clock-icon-2x.png" alt="Macintosh image icon">
+                        </div>
+                        <div class="icon-text">
+                            <h2>Alarm Clock</h2>
+                        </div>
+                    </div>
     
                 </div>
 
-                <div class="screen-window" id="sobre-window" style="transform: scale(0); z-index: 1">
+                <!-- As janelas tem a tag [data-window] -->
+
+                <div data-window class="screen-window" id="sobre-window" style="transform: scale(0); z-index: 1">
                     <div class="window-header no-select">
                         <div class="window-header-title"><h1>sobre.txt</h1></div>
                         <div class="window-header-close"><img src="src/close-icon-x.png" alt="Close"></div>
@@ -84,7 +104,7 @@
                     </div>
                 </div>
 
-                <div class="screen-window" id="porqueccs-window" style="transform: scale(0); z-index: 1">
+                <div data-window class="screen-window" id="porqueccs-window" style="transform: scale(0); z-index: 1">
                     <div class="window-header no-select">
                         <div class="window-header-title"><h1>por que css.txt</h1></div>
                         <div class="window-header-close"><img src="src/close-icon-x.png" alt="Close"></div>
@@ -98,13 +118,23 @@
                     </div>
                 </div>
 
-                <div class="screen-window" id="pfp-window" style="transform: scale(0); z-index: 1">
+                <div data-window class="screen-window" id="pfp-window" style="transform: scale(0); z-index: 1">
                     <div class="window-header no-select">
                         <div class="window-header-title"><h1>pfp.jpg</h1></div>
                         <div class="window-header-close"><img src="src/close-icon-x.png" alt="Close"></div>
                     </div>
                     <div class="window-content">
                         <img src="src/profile-picture-pb.png" alt="Me_irl">
+                    </div>
+                </div> 
+
+                <div data-window class="screen-window" id="calculator-window">
+                    <div class="window-header no-select" id="calculator-header">
+                        <div class="window-header-title"><h1>Calculator</h1></div>
+                        <div class="window-header-close"><img src="src/close-icon-i.png" alt="Close"></div>
+                    </div>
+                    <div class="window-content">
+                        
                     </div>
                 </div> 
 
