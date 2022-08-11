@@ -4,7 +4,7 @@ iconesDesktop.forEach(function(iconElement) {
     iconElement.addEventListener("click", function(eventInfo) {
         // this refere ao elemento que foi clicado (tem o mesmo valor de iconElement)
 
-        var iconId = this.id
+        var iconId = (this.id).toLowerCase()
         var relatedWindowId = iconId.replace("icon", "window")
         var relatedWindow = document.getElementById(relatedWindowId)
         // Seleciona a janela baseado no #id do ícone clicado 
@@ -30,18 +30,27 @@ function overlay(janela) {
     sobre = document.getElementById("sobre-window")
     porqueccs = document.getElementById("porqueccs-window")
     pfp = document.getElementById("pfp-window")
+    clock = document.getElementById("clock-window")
 
-    var janelaId = janela.id
+    var janelaId = (janela.id).toLowerCase()
     if (janelaId === "sobre-window"){
         porqueccs.style.zIndex = parseInt(porqueccs.style.zIndex) -  1
         pfp.style.zIndex = parseInt(pfp.style.zIndex) -  1
+        clock.style.zIndex = parseInt(pfp.style.zIndex) -  1
     }
     else if (janelaId === "porqueccs-window") {
         sobre.style.zIndex = parseInt(sobre.style.zIndex) -  1
         pfp.style.zIndex = parseInt(pfp.style.zIndex) -  1
+        clock.style.zIndex = parseInt(pfp.style.zIndex) -  1
     }
     else if (janelaId === "pfp-window") {
         sobre.style.zIndex = parseInt(sobre.style.zIndex) -  1
+        porqueccs.style.zIndex = parseInt(porqueccs.style.zIndex) -  1
+        clock.style.zIndex = parseInt(pfp.style.zIndex) -  1
+    }
+    else if (janelaId === "clock-window") {
+        sobre.style.zIndex = parseInt(sobre.style.zIndex) -  1
+        pfp.style.zIndex = parseInt(pfp.style.zIndex) -  1
         porqueccs.style.zIndex = parseInt(porqueccs.style.zIndex) -  1
     }
 }

@@ -70,7 +70,7 @@
                         </div>
                     </div>
 
-                    <div class="desktop-icon" id="alarm-clock-icon">
+                    <div class="desktop-icon" id="clock-icon">
                         <div class="icon-image">
                             <img src="src/alarm-clock-icon-2x.png" alt="Macintosh image icon">
                         </div>
@@ -127,7 +127,7 @@
                     </div>
                 </div> 
 
-                <div data-window class="screen-window" id="calculator-window">
+                <div data-window class="screen-window" id="calculator-window" style="transform: scale(0); z-index: 1">
                     <div class="window-header no-select" id="calculator-header">
                         <div class="window-header-title"><h1>Calculator</h1></div>
                         <div class="window-header-close"><img src="src/close-icon-i.png" alt="Close"></div>
@@ -135,7 +135,17 @@
                     <div class="window-content">
                         
                     </div>
-                </div> 
+                </div>
+                
+                <div data-window class="screen-window" id="clock-window" style="transform: scale(0); z-index: 1">
+                    <div class="window-header no-select">
+                        <div class="window-header-title"><h1>Clock</h1></div>
+                        <div class="window-header-close"><img src="src/close-icon-x.png" alt="Close"></div>
+                    </div>
+                    <div class="window-content">
+                        
+                    </div>
+                </div>
 
             </div>
 
