@@ -202,6 +202,39 @@ header img:hover {
     max-width: 100%;
 }
 
+/* Relógio */
+
+#clock-window {
+    width: 430px;
+    height: 200px;
+    background-color: black;
+}
+#clock-window .window-content {
+    width: 100%;
+    height: calc(100% - 34px); /* Total da janela menos a altura do header */
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    overflow: auto;
+}
+#clock-window .window-content #time-containter {
+    width: fit-content;
+
+    color: white;
+    font-family: 'Pixel Operator HB';
+    font-size: 85px;
+}
+#clock-window .window-content #date {
+    color: white;
+    font-size: 30px;
+}
+
+
 /* Calculadora */
 
 /* #calculator-window {
