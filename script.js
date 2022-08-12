@@ -129,22 +129,37 @@ janelasInteiras.forEach(function gerarPosicoes(janela) {
 })
 
 // PARTE - Funcionamento do relógio
-function clockWindowTime() {
+function clockDateTime() {
+    /* TEMPO */
     var realTime = new Date();
-    
+
     // Atribui a informação para as diferentes variáveis
     var hours = realTime.getHours();
     var minutes = realTime.getMinutes();
     var seconds = realTime.getSeconds();
-
-    // Tranforma o tempo no formato de dois dígitos para valores de tempo com apenas um digito
+    // Transforma o tempo no formato de dois dígitos para valores de tempo com apenas um digito
     hours = ("0"+hours).slice(-2);
     minutes = ("0"+minutes).slice(-2);
     seconds = ("0"+seconds).slice(-2);
-
+    // Formata o tempo real no HTML
     document.getElementById('clock-real-time').innerHTML = hours + ':' + minutes + ':' + seconds
+
+    /* DATA */
+    // Gera os números correspondentes a cada informação
+    var weekDay = realTime.getDay();
+    var dayNumber = realTime.getDate();
+    var monthNumber = realTime.getMonth();
+    var year = realTime.getFullYear();
+
+    var weekNames = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
+    var monthNames = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
+    // Junta todas as informações da data
+    var formatedDateString = String(weekNames[weekDay]) + ', ' + String(dayNumber) + ' de ' + String(monthNames[monthNumber]) + ' de ' + String(year)
+
+    // Formata a data em tempo real
+    document.getElementById('date').innerHTML = formatedDateString;
 }
 function initClock() {
-    clockWindowTime()
-    window.setInterval("clockWindowTime()", 1)
+    clockDateTime()
+    window.setInterval("clockDateTime()", 1)
 }
