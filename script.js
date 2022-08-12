@@ -127,3 +127,24 @@ janelasInteiras.forEach(function gerarPosicoes(janela) {
     janela.style.top = topPos + 'px';
     janela.style.left = leftPos + 'px';
 })
+
+// PARTE - Funcionamento do relógio
+function clockWindowTime() {
+    var realTime = new Date();
+    
+    // Atribui a informação para as diferentes variáveis
+    var hours = realTime.getHours();
+    var minutes = realTime.getMinutes();
+    var seconds = realTime.getSeconds();
+
+    // Tranforma o tempo no formato de dois dígitos para valores de tempo com apenas um digito
+    hours = ("0"+hours).slice(-2);
+    minutes = ("0"+minutes).slice(-2);
+    seconds = ("0"+seconds).slice(-2);
+
+    document.getElementById('clock-real-time').innerHTML = hours + ':' + minutes + ':' + seconds
+}
+function initClock() {
+    clockWindowTime()
+    window.setInterval("clockWindowTime()", 1)
+}
