@@ -85,7 +85,6 @@ header img:hover {
     z-index: 1;
 
     display: grid;
-    display: grid; 
     grid-template-columns: 128px 128px 128px 128px 128px 128px 128px 128px; 
     grid-template-rows: 128px 128px; 
     gap: 0px 0px; 
@@ -264,3 +263,53 @@ header img:hover {
 #calculator-header .window-header-close {
     left: 9px !important;
 } */
+
+
+
+/* CONFIGURAÇÕES DAS TELAS */
+
+@media screen and (max-width: 1028px) {
+    #screen {
+        height: 97%;
+        width: 97%;
+        border-radius: 10px;
+        overflow: hidden;
+        background-image: url("src/pixelated-background.png");
+    }
+}
+@media screen and (min-width: 550px) and (max-width: 1028px) {
+    #desktop-grid {
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 128px 128px 128px 128px;
+        gap: 10px 0;
+        grid-template-areas: 
+        ". . . ."
+        ". . . .";
+    }
+}
+@media screen and (min-width: 450px) and (max-width: 550px) {
+    #desktop-grid {
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 128px 128px 128px 128px;
+        gap: 10px 0;
+        grid-template-areas: 
+        ". . ."
+        ". . ."
+        ". . .";
+    }
+}
+@media screen and (max-width: 450px) {
+    #desktop-grid {
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 128px 128px 128px 128px;
+        gap: 10px 0;
+        grid-template-areas: 
+        ". ."
+        ". ."
+        ". ."
+        ". .";
+    }
+}
