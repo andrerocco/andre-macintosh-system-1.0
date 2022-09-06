@@ -242,11 +242,16 @@ header img:hover {
     background-color: black !important; /* Inverte a cor do header */
     background-image: none !important; /* Remove a imagem das listras do header */
 }
-#calculator-header-title {
+#calculator-header .window-header-title {
     color: white !important; /* Cor do texto do header em braco */
+    left: 82% !important;
+    transform: translate(-82%, -50%) !important; /* Ajusta a posição do texto do header */
 }
-#calculator-header-title h1 {
-    background-color: black;
+#calculator-header .window-header-title h1 {
+    background-color: black !important;
+}
+#calculator-header .window-header-close {
+    left: 8px !important; /* Ajusta a posição do ícone do header */
 }
 
 #calculator-window {
@@ -261,24 +266,6 @@ header img:hover {
     border-radius: 8px; /* Arredonda a borda do fundo interno */
     height: 100%;
 }
-/*
-#calculator-header {
-    background-color: black !important;
-    background-image: none !important;
-}
-#calculator-header .window-header-title {
-    left: 75% !important;
-    transform: translate(-75%, -50%) !important;
-}
-#calculator-header .window-header-title h1 {
-    color: white !important;
-    padding: 0 0 !important;
-    background-color: black !important;
-}
-#calculator-header .window-header-close {
-    left: 9px !important;
-} */
-
 
 
 /* CONFIGURAÇÕES DAS TELAS */
