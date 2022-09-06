@@ -238,15 +238,30 @@ header img:hover {
 
 /* Calculadora */
 
-/* #calculator-window {
+#calculator-header {
+    background-color: black !important; /* Inverte a cor do header */
+    background-image: none !important; /* Remove a imagem das listras do header */
+}
+#calculator-header-title {
+    color: white !important; /* Cor do texto do header em braco */
+}
+#calculator-header-title h1 {
+    background-color: black;
+}
+
+#calculator-window {
     width: 208px !important;
     height: 332px !important;
-    border-radius: 11px;
-    overflow: hidden;
-
-    background-color: black;
-    background-image: url(src/calculator-background.png);
+    border-radius: 11px !important;
+    overflow: hidden !important;
+    background-color: black !important; /* Define o fundo da janela como preto */
 }
+#calculator-window .window-content {
+    background-image: url(src/calculator-background.png) !important; /* Define o fundo da parte interna da janela como pontilhado */
+    border-radius: 8px; /* Arredonda a borda do fundo interno */
+    height: 100%;
+}
+/*
 #calculator-header {
     background-color: black !important;
     background-image: none !important;
