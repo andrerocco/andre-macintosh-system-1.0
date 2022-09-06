@@ -263,24 +263,47 @@ header img:hover {
 }
 #calculator-window .window-content {
     background-image: url(src/calculator-background.png) !important; /* Define o fundo da parte interna da janela como pontilhado */
-    border-radius: 8px; /* Arredonda a borda do fundo interno */
-    height: 100%;
+    border-radius: 8px !important; /* Arredonda a borda do fundo interno */
+    padding: 0 !important; /* Tira o padding padrão das janelas */
+    height: calc(100% - 34px) !important; /* 100% - Altura do header - Borda do header */
+    width: 100% !important;
 
-    /* display: flex; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 #calculator-screen {
-    width: 172px;
+    width: 162px;
     height: 40px;
+    margin-bottom: 8px;
+
+    background: white;
+    color: black;
+    border: 2px solid black;
+
+    overflow: hidden; 
+}
+#calculator-screen #calculator-number {
+    height: 100%;
+    width: auto;
+    margin: 0px 8px; /* Distância da borda da tela */
+
+    font-size: 24px;
+    display: flex; /* Posiciona o texto verticalmente no centro e horizontalmente na direita */
+    justify-content: flex-end;
+    align-items: center;
 }
 #calculator-bottom-zero { grid-area: h-two; }
 #calculator-right-equals { grid-area: v-two; }
 #calculator-grid {
-    width: 172px;
-    width: 212px;
+    width: 164px;
+    height: fit-content;
     display: grid;
 
-    gap: 4px 2px;
+    gap: 8px 4px;
     grid-template-columns: 38px 38px 38px 38px; 
     grid-template-rows: 36px 36px 36px 36px 36px; 
     grid-template-areas: 
