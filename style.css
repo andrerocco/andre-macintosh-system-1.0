@@ -265,8 +265,45 @@ header img:hover {
     background-image: url(src/calculator-background.png) !important; /* Define o fundo da parte interna da janela como pontilhado */
     border-radius: 8px; /* Arredonda a borda do fundo interno */
     height: 100%;
+
+    /* display: flex; */
 }
 
+#calculator-screen {
+    width: 172px;
+    height: 40px;
+}
+#calculator-bottom-zero { grid-area: h-two; }
+#calculator-right-equals { grid-area: v-two; }
+#calculator-grid {
+    width: 172px;
+    width: 212px;
+    display: grid;
+
+    gap: 4px 2px;
+    grid-template-columns: 38px 38px 38px 38px; 
+    grid-template-rows: 36px 36px 36px 36px 36px; 
+    grid-template-areas: 
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . v-two"
+    "h-two h-two . v-two";
+}
+#calculator-grid button {
+    height: auto;
+    width: auto;
+    
+    background: white;
+    color: black;
+    border: 2px solid black;
+
+    margin-bottom: 4px;
+    margin-right: 2px;
+    filter: drop-shadow(2px 4px 0 black); /* Sombra dos botões */
+
+    font-size: 26px;
+}
 
 /* CONFIGURAÇÕES DAS TELAS */
 
