@@ -184,6 +184,8 @@ class Calculator {
                     break
             }
             
+            this.operation = undefined // Limpa a operação
+            result = Math.round(result * 10000)/10000 // Arredonda o número para 4 casas decimais
             this.numberTemp = this.numberShown
             this.numberShown = result.toString()
         }
