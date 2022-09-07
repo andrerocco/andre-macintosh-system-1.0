@@ -235,7 +235,6 @@ header img:hover {
     font-size: 28px;
 }
 
-
 /* Calculadora */
 
 #calculator-header {
@@ -253,7 +252,6 @@ header img:hover {
 #calculator-header .window-header-close {
     left: 8px !important; /* Ajusta a posição do ícone do header */
 }
-
 #calculator-window {
     width: 208px !important;
     height: 332px !important;
@@ -274,7 +272,6 @@ header img:hover {
     justify-content: center;
     align-items: center;
 }
-
 #calculator-screen {
     width: 162px;
     height: 40px;
@@ -286,7 +283,7 @@ header img:hover {
 
     overflow: hidden; 
 }
-#calculator-screen #calculator-number {
+#calculator-screen #calculator-operand {
     height: 100%;
     width: auto;
     margin: 0px 8px; /* Distância da borda da tela */
@@ -327,6 +324,9 @@ header img:hover {
 
     font-size: 26px;
 }
+
+
+
 
 /* CONFIGURAÇÕES DAS TELAS */
 

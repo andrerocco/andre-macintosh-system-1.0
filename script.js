@@ -122,11 +122,112 @@ janelasInteiras.forEach(function gerarPosicoes(janela) {
     var leftPos = Math.floor(Math.random() * (safeWidth - 5 + 1)) + 5
     
 
-    console.log(topPos)
-    console.log(leftPos)
     janela.style.top = topPos + 'px';
     janela.style.left = leftPos + 'px';
 })
+
+// PARTE - Funcionamento da calculadora
+class Calculator {
+    constructor(calculatorOperandText) {
+        this.calculatorOperandDiv = calculatorOperandText
+        this.numberShown = ''
+        this.numberTemp = ''
+        this.operation = undefined
+    }
+    
+    clear() {
+        this.calculatorOperandDiv.innerText = '0'
+        this.numberShown = ''
+        this.numberTemp = ''
+        this.operation = undefined
+    }
+
+    updateNumber(number) {
+        if (number !== '.'){ // Se o botão clicado não for ponto
+            if (number === '0' && this.numberShown.length === 0) { // Se o número ainda estiver vazio e o botão clicado for zero (zero à esquerda)
+                console.log('naooo')
+            } else {
+                this.numberShown = this.numberShown + number
+            }
+        } else if (number === '.' && this.numberShown.indexOf('.') === -1) { // Se number for ponto e já não tiver um ponto no número mostrado
+            this.numberShown = this.numberShown + number
+        }
+    }
+
+    updateScreen(valor = this.numberShown) { // O valor de atualização é this.numberShown por padrão
+        this.calculatorOperandDiv.innerText = valor
+    }
+
+    chooseOperation(operation) {
+        this.operation = operation
+        this.numberTemp = this.numberShown // Manda o valor do número mostrado para o número temporário
+        this.numberShown = '' // Limpa o número mostrado
+    }
+
+    operate() {
+        if (this.operation !== undefined) {
+            let result
+
+            const oldNumber = parseFloat(this.numberTemp)
+            const newNumber = parseFloat(this.numberShown)
+
+            // Cancela a operação se algum dos dois números não for válido (no caso do usuário não ter inserido)
+            if(isNaN(oldNumber) || isNaN(newNumber)) return            
+
+            // Faz a operação baseada na string em this.operation
+            switch(this.operation) {
+                case '+':
+                    result = oldNumber + newNumber
+                    break
+                case '-':
+                    result = oldNumber - newNumber
+                    break
+                case '*':
+                    result = oldNumber * newNumber
+                    break
+                case '/':
+                    result = oldNumber / newNumber
+                    break
+            }
+            
+            this.numberTemp = this.numberShown
+            this.numberShown = result.toString()
+        }
+    }
+}
+
+const calculatorNumbers = document.querySelectorAll('[data-number]')
+const calculatorOperations = document.querySelectorAll('[data-operation]')
+const calculatorEquals = document.querySelectorAll('[data-equals]')
+const calculatorClear = document.querySelector('[data-calculator-clear]')
+const calculatorOperandText = document.querySelector('[data-operand]')
+
+const calculator = new Calculator(calculatorOperandText)
+
+calculatorNumbers.forEach(button => { // Monitora os números clicados
+    button.addEventListener('click', function() {
+        calculator.updateNumber(button.innerText)
+        calculator.updateScreen()
+    })
+})
+
+calculatorOperations.forEach(button => { // Monitora as operações clicadas
+    button.addEventListener('click', function() {
+        calculator.chooseOperation(button.innerText)
+    })
+})
+
+calculatorEquals.forEach(button => { // Monitora os botões de igual clicados
+    button.addEventListener('click', function() {
+        calculator.operate()
+        calculator.updateScreen()
+    })
+})
+
+calculatorClear.addEventListener('click', function() { // Monitora o botão de clear clicado
+    calculator.clear()
+})
+
 
 // PARTE - Funcionamento do relógio
 function clockDateTime() {
