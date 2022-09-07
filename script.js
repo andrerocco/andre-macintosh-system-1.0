@@ -24,38 +24,32 @@ sobrePath.addEventListener("click", function() {
 
 // PARTE - Z-index das janelas (a função é ativada quando o usuário clica em um dos ícones)
 function overlay(janela) {
-    let zAtual = parseInt(janela.style.zIndex)
-    janela.style.zIndex = 200;
+    if (janela.style.zIndex != listaOrdemJanelas.length) { // Se o elemento já não for o primeiro
+        let idAtual = janela.id
+        
+        // Reposiciona o id em listaOrdemJanelas para a primeira posição
+        let tempPosicaoAntiga = listaOrdemJanelas.indexOf(idAtual) // Descobre o índice da lista com a ordem das janelas 
+        listaOrdemJanelas.splice(tempPosicaoAntiga, 1) // Remove o id da lista
+        listaOrdemJanelas.unshift(idAtual) // Coloca o id na primeira posição
 
-    sobre = document.getElementById("sobre-window")
-    porqueccs = document.getElementById("porqueccs-window")
-    pfp = document.getElementById("pfp-window")
-    clock = document.getElementById("clock-window")
+        for(let i = 0; i < listaOrdemJanelas.length; i++) {
+            let idElemento = listaOrdemJanelas[i]
+            let elementoAtual = document.getElementById(idElemento)
 
-    var janelaId = (janela.id).toLowerCase()
-    if (janelaId === "sobre-window"){
-        porqueccs.style.zIndex = parseInt(porqueccs.style.zIndex) -  1
-        pfp.style.zIndex = parseInt(pfp.style.zIndex) -  1
-        clock.style.zIndex = parseInt(pfp.style.zIndex) -  1
-    }
-    else if (janelaId === "porqueccs-window") {
-        sobre.style.zIndex = parseInt(sobre.style.zIndex) -  1
-        pfp.style.zIndex = parseInt(pfp.style.zIndex) -  1
-        clock.style.zIndex = parseInt(pfp.style.zIndex) -  1
-    }
-    else if (janelaId === "pfp-window") {
-        sobre.style.zIndex = parseInt(sobre.style.zIndex) -  1
-        porqueccs.style.zIndex = parseInt(porqueccs.style.zIndex) -  1
-        clock.style.zIndex = parseInt(pfp.style.zIndex) -  1
-    }
-    else if (janelaId === "clock-window") {
-        sobre.style.zIndex = parseInt(sobre.style.zIndex) -  1
-        pfp.style.zIndex = parseInt(pfp.style.zIndex) -  1
-        porqueccs.style.zIndex = parseInt(porqueccs.style.zIndex) -  1
+            elementoAtual.style.zIndex = listaOrdemJanelas.length - i // Os primeiros elementos da lista serão colocados acima
+        }
     }
 }
-let janelasInteiras = document.querySelectorAll('[data-window]')
-janelasInteiras.forEach(function(janela) {
+
+let objetoJanelas = document.querySelectorAll('[data-window]')
+
+let listaOrdemJanelas = [] // A lista contém a ordem atual de sobreposição das janelas
+objetoJanelas.forEach(function(janela) {
+    let idAtual = janela.id
+    listaOrdemJanelas.push(idAtual)
+})
+
+objetoJanelas.forEach(function(janela) {
     janela.addEventListener("click", function() {
         overlay(janela)
     })
@@ -108,7 +102,7 @@ dragAreaJanelas.forEach(function(header) {
 const desktop = document.querySelector('#desktop')
 const desktopHeight = desktop.offsetHeight;
 const desktopWidth = desktop.offsetWidth;
-janelasInteiras.forEach(function gerarPosicoes(janela) {
+objetoJanelas.forEach(function gerarPosicoes(janela) {
     var janelaHeight = janela.offsetHeight;
     var janelaWidth = janela.offsetWidth;
 
