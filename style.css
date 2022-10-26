@@ -36,6 +36,24 @@ a {
     user-select: none; /* Standard */
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 16px;
+}
+::-webkit-scrollbar-track {
+    background-image: url('src/scrollbar-background.png');
+    border-left: 2px solid black;
+}
+::-webkit-scrollbar-thumb {
+    background-color: white;
+    border: 0px solid transparent;
+    background-clip: content-box;
+    
+    border-left: 2px solid transparent;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
 /* Medidas em 'px' duplicadas em relação à resolução do 'Macintosh System 1' */
 
 main {
@@ -136,13 +154,15 @@ header img:hover {
     background-color: white;
     border: 2px solid black;
     box-sizing: border-box;
+    overflow-y: auto;
 
     transition: transform 0.15s linear;
 }
 .window-header {
     height: 32px;
     width: 100%;
-    position: relative;
+    position: sticky;
+    top: 0;
 
     border-bottom: 2px solid black;
     background-color: white;
@@ -317,6 +337,7 @@ header img:hover {
     background: white;
     color: black;
     border: 2px solid black;
+    cursor: pointer;
 
     margin-bottom: 4px;
     margin-right: 2px;
